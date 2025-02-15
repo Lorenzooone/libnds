@@ -22,13 +22,17 @@ endif
 # Targets
 # -------
 
-.PHONY: all arm7 arm9 clean docs install
+.PHONY: all arm7 arm9 clean docs install arm9_arm
 
-all: arm9 arm7
+all: arm9 arm7 arm9_arm
 
 arm9:
 	@+$(MAKE) -f Makefile.arm9 --no-print-directory
 	@+$(MAKE) -f Makefile.arm9 --no-print-directory DEBUG=1
+
+arm9_arm:
+	@+$(MAKE) -f Makefile.arm9_arm --no-print-directory
+	@+$(MAKE) -f Makefile.arm9_arm --no-print-directory DEBUG=1
 
 arm7:
 	@+$(MAKE) -f Makefile.arm7 --no-print-directory
